@@ -24,7 +24,7 @@ weights = [1] + [9.8] * (len(fortunes) - 2) + [1]
 @app.route('/')
 def index():
     fortune = random.choices(fortunes, weights=weights)[0]
-    return f"<h2>{fortune}</h2>"
+    return fortune
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
